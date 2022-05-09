@@ -25,7 +25,7 @@ export default {
 <style scoped>
 .pin {
   color:#000000!important;
-  font-size:15px;
+  font-size:18px;
   line-height:19px;
   margin-top:0;
   margin-left:0;
@@ -33,7 +33,7 @@ export default {
   margin-bottom:0!important;
   font-weight:normal;
   letter-spacing:2px;
-  padding:12px 24px;
+  padding:12px 20px;
   max-width:400px;
 }
 </style>
