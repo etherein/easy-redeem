@@ -2,3 +2,12 @@
   font-size: 12px;
   color: darkgray;
 }
+
+@font-face {
+  font-family: scancardium;
+  src: url(./fonts/Scancardium_2.0.woff);
+}
+
+.scancardium {
+  font-family: 'scancardium', serif;
+}
