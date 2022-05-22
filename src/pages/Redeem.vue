@@ -1,10 +1,16 @@
 <template>
   <q-page padding class="flex flex-center" @click="redeeming = true">
     <div class="flex-break">
+      <div class="text-subtitle1 q-mb-lg">
+        {{ $t('redeem.cardRemaining', { count: cards.length }) }}
+      </div>
+      <div class="text-subtitle1 q-mb-lg" style="margin-left: -10px">
+        <q-checkbox v-model="enableValueFilter" @update:model-value="load">
+          {{ $t('redeem.cardFiltering') }}
+        </q-checkbox>
+        <q-input dense class="float-right q-ml-md" v-model="valueFilter" style="max-width: 200px" @update:model-value="load" />
+      </div>
       <div v-if="cards.length">
-        <div class="text-subtitle1 q-mb-lg">
-          {{ $t('redeem.cardRemaining', { count: cards.length }) }}
-        </div>
         <transition leave-active-class="animated fadeOut absolute">
           <div v-if="! redeeming">
             <div class="text-h6">
@@ -81,6 +87,8 @@ export default {
       cards: [],
       redeeming: false,
       skipping: false,
+      enableValueFilter: false,
+      valueFilter: this.$utils.getPreference('defaultCardValue', '$10')
     }
   },
 
@@ -95,6 +103,9 @@ export default {
         this.cards = JSON.parse(cards);
       }
       this.cards = this.filterOk(this.cards);
+      if (this.enableValueFilter) {
+        this.cards = this.cards.filter(card => card.value === this.valueFilter);
+      }
     },
 
     filterOk(cards) {

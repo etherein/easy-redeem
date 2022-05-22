@@ -22,6 +22,7 @@ export default {
     table: {
       title: '礼品卡',
       pin: '卡 PIN',
+      value: '卡面值',
       status: '状态',
       timeAdded: '添加时间',
       timeUpdated: '更新时间',
@@ -61,6 +62,7 @@ export default {
     resetDone: '重置完成。',
     redeem: '兑换',
     autoRedeemNextCard: '标记后自动开始兑换下一张卡',
+    defaultCardValue: '默认卡面值'
   },
 
   redeem: {
@@ -73,5 +75,6 @@ export default {
     cardAddedAt: '卡添加日期：{time}',
     clickAnywhere: '点击任意位置',
     toRedeem: '以开始兑换下一张卡。',
+    cardFiltering: '过滤卡的面值为'
   }
 }

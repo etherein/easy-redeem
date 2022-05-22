@@ -20,6 +20,13 @@ export default boot(({ app }) => {
         message: message,
         icon: matDone
       });
+    },
+    getPreference(key, fallback) {
+      const preferences = JSON.parse(app.config.globalProperties.$q.localStorage.getItem('preferences'));
+      if (! preferences) {
+        return fallback;
+      }
+      return preferences[key] ?? fallback;
     }
   }
 

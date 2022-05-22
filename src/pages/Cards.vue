@@ -88,6 +88,11 @@
             :label="$t('cards.table.title')"
             type="textarea"
           />
+          <q-input
+              filled
+              v-model="cardValue"
+              :label="$t('cards.table.value')"
+          />
           <div class="text-caption">
             {{ $t('cards.add.caption') }}
           </div>
@@ -141,6 +146,7 @@ export default {
   data() {
     const columns = [
       { name: 'pin', label: this.$t('cards.table.pin'), field: 'pin' },
+      { name: 'value', label: this.$t('cards.table.value'), field: 'value' },
       { name: 'status', label: this.$t('cards.table.status'), field: 'status' },
       { name: 'timeAdded', label: this.$t('cards.table.timeAdded'), field: 'timeAdded' },
       { name: 'timeUpdated', label: this.$t('cards.table.timeUpdated'), field: 'timeUpdated' }
@@ -151,7 +157,8 @@ export default {
       cardInput: '',
       cards: [],
       selectedCards: [],
-      columns
+      columns,
+      cardValue: this.$utils.getPreference('defaultCardValue', '$10')
     }
   },
 
@@ -165,6 +172,7 @@ export default {
       for (const pin of pins) {
         newCards.push({
           pin: pin,
+          value: this.cardValue,
           status: 'ok',
           timeAdded: date.toLocaleString(),
           timeUpdated: date.toLocaleString(),

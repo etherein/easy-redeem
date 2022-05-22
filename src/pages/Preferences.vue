@@ -24,6 +24,16 @@
           :label="$t('preferences.importAppleValidation')"
           @update:model-value="save"
         />
+
+        <q-input
+            dense
+            stack-label
+            filled
+            :label="$t('preferences.defaultCardValue')"
+            v-model="preferences.defaultCardValue"
+            style="max-width: 200px"
+            @update:model-value="save"
+        />
       </div>
 
       <div>
@@ -76,7 +86,8 @@ export default {
       } else {
         this.preferences = {
           importAppleValidation: false,
-          autoRedeemNextCard: true
+          autoRedeemNextCard: true,
+          defaultCardValue: '$10',
         }
         this.save();
       }

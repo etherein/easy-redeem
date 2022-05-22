@@ -22,6 +22,7 @@ export default {
     table: {
       title: 'Gift Cards',
       pin: 'Card PIN',
+      value: 'Card Value',
       status: 'Status',
       timeAdded: 'Time Added',
       timeUpdated: 'Time Updated',
@@ -61,6 +62,7 @@ export default {
     resetDone: 'Done reset.',
     redeem: 'Redeem',
     autoRedeemNextCard: 'Redeem a new card after marking previous card',
+    defaultCardValue: 'Default Card Value'
   },
 
   redeem: {
@@ -73,5 +75,6 @@ export default {
     cardAddedAt: 'Card added at {time}',
     clickAnywhere: 'Click anywhere',
     toRedeem: 'to start redeeming a new card.',
+    cardFiltering: 'Filter cards with value of'
   }
 }
