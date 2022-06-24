@@ -23,6 +23,7 @@
         </transition>
         <transition enter-active-class="animated fadeInLeft" leave-active-class="animated fadeOutRight absolute">
           <div v-if="redeeming && ! skipping" :key="cards[0].pin">
+            <div class="text-weight-bold text-h6 q-mb-sm">{{ cards[0].value }}</div>
             <PINDisplay :pin="cards[0].pin" />
             <div class="text-caption q-mt-md">
               {{ $t('redeem.cardAddedAt', { time: cards[0].timeAdded }) }}
