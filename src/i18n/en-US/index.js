@@ -62,7 +62,9 @@ export default {
     resetDone: 'Done reset.',
     redeem: 'Redeem',
     autoRedeemNextCard: 'Redeem a new card after marking previous card',
-    defaultCardValue: 'Default Card Value'
+    defaultCardValue: 'Default Card Value',
+    startup: 'Startup',
+    openRedeemPageOnStartup: 'Open redeem page on startup'
   },
 
   redeem: {

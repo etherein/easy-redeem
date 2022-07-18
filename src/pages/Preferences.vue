@@ -7,6 +7,15 @@
 
     <template v-if="this.preferences">
       <div class="q-mb-md">
+        <div class="text-h6">{{ $t('preferences.startup') }}</div>
+        <q-checkbox
+            left-label
+            v-model="preferences.openRedeemPageOnStartup"
+            :label="$t('preferences.openRedeemPageOnStartup')"
+            @update:model-value="save"
+        />
+      </div>
+      <div class="q-mb-md">
         <div class="text-h6">{{ $t('preferences.redeem') }}</div>
         <q-checkbox
           left-label
@@ -88,6 +97,7 @@ export default {
           importAppleValidation: false,
           autoRedeemNextCard: true,
           defaultCardValue: '$10',
+          openRedeemPageOnStartup: false
         }
         this.save();
       }

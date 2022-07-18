@@ -62,7 +62,9 @@ export default {
     resetDone: '重置完成。',
     redeem: '兑换',
     autoRedeemNextCard: '标记后自动开始兑换下一张卡',
-    defaultCardValue: '默认卡面值'
+    defaultCardValue: '默认卡面值',
+    startup: '启动',
+    openRedeemPageOnStartup: '启动时打开兑换页面'
   },
 
   redeem: {

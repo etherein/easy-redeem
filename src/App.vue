@@ -23,6 +23,12 @@ export default defineComponent({
     } else {
       this.locale = this.$q.lang.getLocale();
     }
+
+    setTimeout(() => {
+      if (this.$route.path === '/' && this.$utils.getPreference('openRedeemPageOnStartup', false)) {
+        this.$router.push('redeem');
+      }
+    }, 100);
   }
 })
 </script>
